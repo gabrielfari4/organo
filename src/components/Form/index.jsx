@@ -1,3 +1,4 @@
+import Button from "../Button";
 import Dropdown from "../Dropdown";
 import Input from "../Input";
 import "./Form.css";
@@ -14,14 +15,22 @@ const Form = () => {
         'Inovação e Gestão'
     ]
 
+    const onSave = (e) => {
+        e.preventDefault()
+        console.log('Form was submitted')
+    }
+
   return (
     <section className="form">
-      <form>
+      <form onSubmit={onSave}>
         <h2>Preencha os dados para criar o card do colaborador.</h2>
-        <Input label="Nome" placeholder="Digite seu nome" />
-        <Input label="Cargo" placeholder="Digite seu cargo" />
+        <Input mandatory={true} label="Nome" placeholder="Digite seu nome" />
+        <Input mandatory={true} label="Cargo" placeholder="Digite seu cargo" />
         <Input label="Imagem" placeholder="Informe o endereço da imagem" />
-        <Dropdown label='Time' items={times}/>
+        <Dropdown mandatory={true} label='Time' items={times}/>
+        <Button>
+            Criar card
+        </Button>
       </form>
     </section>
   );
