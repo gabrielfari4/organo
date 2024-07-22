@@ -1,8 +1,10 @@
-
+import './Banner.css'
 
 const Banner = () => {
     return (
-        <img src="/images/banner.png" alt="Banner principal da página" /> 
+        <header className='banner'>
+            <img src="/images/banner.png" alt="Banner principal da página" /> 
+        </header>
     )
 }
 
