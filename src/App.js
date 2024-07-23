@@ -57,7 +57,12 @@ function App() {
 
       {teams.map(team => {
         return (
-          <Team name={team.name} primaryColor={team.primaryColor} secondaryColor={team.secondaryColor} key={team.name}/>
+          <Team 
+            name={team.name} primaryColor={team.primaryColor} 
+            secondaryColor={team.secondaryColor} 
+            key={team.name}
+            employees={employees}
+          />
         ) 
       })}
       
