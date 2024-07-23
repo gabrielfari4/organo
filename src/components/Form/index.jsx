@@ -6,16 +6,6 @@ import "./Form.css";
 
 const Form = (props) => {
 
-    const times = [
-        'Programação',
-        'Front-end',
-        'Data Science',
-        'DevOps',
-        'UX e Design',
-        'Mobile',
-        'Inovação e Gestão'
-    ]
-
     const [name, setName] = useState('');
     const [role, setRole] = useState('');
     const [image, setImage] = useState('');
@@ -52,7 +42,7 @@ const Form = (props) => {
         />
         <Dropdown 
           mandatory={true} label='Time' 
-          items={times}
+          items={props.teams}
           value={team}
           onChanged={value => setTeam(value)}
         />

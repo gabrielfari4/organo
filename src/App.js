@@ -8,38 +8,38 @@ function App() {
   const teams = [
     {
       name: 'Programação',
-      primaryColor: '',
-      secondaryColor: ''
+      primaryColor: '#57c278',
+      secondaryColor: '#d9f7e9'
     },
     {
       name: 'Front-end',
-      primaryColor: '',
-      secondaryColor: ''
+      primaryColor: '#82CFFA',
+      secondaryColor: '#E8F8FF'
     },
     {
       name: 'Data Science',
-      primaryColor: '',
-      secondaryColor: ''
+      primaryColor: '#A6D157',
+      secondaryColor: '#F0F8E2'
     },
     {
       name: 'DevOps',
-      primaryColor: '',
-      secondaryColor: ''
+      primaryColor: '#E06B69',
+      secondaryColor: '#FDE7E8'
     },
     {
       name: 'UX e Design',
-      primaryColor: '',
-      secondaryColor: ''
+      primaryColor: '#DB6EBF',
+      secondaryColor: '#FAE9F5'
     },
     {
       name: 'Mobile',
-      primaryColor: '',
-      secondaryColor: ''
+      primaryColor: '#FFBA05',
+      secondaryColor: '#FFF5D9'
     },
     {
       name: 'Inovação e Gestão',
-      primaryColor: '',
-      secondaryColor: ''
+      primaryColor: '#FF8A29',
+      secondaryColor: '#FFEEDF'
     },
   ]
 
@@ -53,8 +53,14 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Form onSubmittingEmployee={employee => onSubmittedEmployee(employee)}/>
-      <Team name='Programação'/>
+      <Form onSubmittingEmployee={employee => onSubmittedEmployee(employee)} teams={teams}/>
+
+      {teams.map(team => {
+        return (
+          <Team name={team.name} primaryColor={team.primaryColor} secondaryColor={team.secondaryColor} key={team.name}/>
+        ) 
+      })}
+      
     </div>
   );
 }
