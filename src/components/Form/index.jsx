@@ -4,7 +4,7 @@ import Dropdown from "../Dropdown";
 import Input from "../Input";
 import "./Form.css";
 
-const Form = () => {
+const Form = (props) => {
 
     const times = [
         'Programação',
@@ -23,7 +23,12 @@ const Form = () => {
 
     const onSave = (e) => {
         e.preventDefault()
-        console.log('Form was submitted', name, role, image, team)
+        props.onSubmittingEmployee({
+          name,
+          role,
+          image,
+          team
+        })
     }
 
   return (

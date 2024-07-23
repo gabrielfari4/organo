@@ -2,8 +2,6 @@ import './Input.css'
 
 const Input = (props) => {
 
-    
-
     const onType = (e) => {
         props.onChanged(e.target.value)
     }
