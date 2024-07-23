@@ -8,8 +8,10 @@ const Team = (props) => {
             <div className='employees'>
                 {props.employees.map(employee => {
                     return <Employee 
+                        key={employee.name}
                         name={employee.name} role={employee.role}
                         image={employee.image}
+                        primaryColor={props.primaryColor}
                         />
                 })}
             </div>

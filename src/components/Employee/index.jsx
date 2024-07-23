@@ -3,7 +3,7 @@ import './Employee.css'
 const Employee = (props) => {
     return (
         <div className='colaborador'>
-            <div className='cabecalho'>
+            <div className='cabecalho' style={{ backgroundColor: props.primaryColor }}>
             <img src={props.image} alt={`Foto ${props.name}`} />
             </div>
             <div className='rodape'>
