@@ -14,4 +14,7 @@
         box-sizing: border-box;
         border-radius: 6px;
     }
+    .option {
+        background-color: #cccccc;
+    }
 }
