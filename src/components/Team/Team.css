@@ -7,4 +7,10 @@
         display: inline-block;
         padding-bottom: 8px;
     }
+    .employees {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 32px;
+        flex-wrap: wrap;
+    }
 }

@@ -1,14 +1,14 @@
 import './Employee.css'
 
-const Employee = () => {
+const Employee = (props) => {
     return (
         <div className='colaborador'>
             <div className='cabecalho'>
-            <img src="https://github.com/gabrielfari4.png" alt="Foto do funcionário" />
+            <img src={props.image} alt={`Foto ${props.name}`} />
             </div>
             <div className='rodape'>
-                <h4>Gabriel</h4>
-                <h5>Dev</h5>
+                <h4>{props.name}</h4>
+                <h5>{props.role}</h5>
             </div>
         </div>
     )
