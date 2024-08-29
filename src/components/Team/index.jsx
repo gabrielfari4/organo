@@ -1,5 +1,5 @@
 import Employee from '../Employee';
-import './Team.css'
+import './styles.css'
 
 const Team = (props) => {
     return (
@@ -9,9 +9,11 @@ const Team = (props) => {
                 {props.employees.map(employee => {
                     return <Employee 
                         key={employee.name}
-                        name={employee.name} role={employee.role}
+                        name={employee.name} 
+                        role={employee.role}
                         image={employee.image}
                         primaryColor={props.primaryColor}
+                        onDeleting={props.onDeleting}
                         />
                 })}
             </div>

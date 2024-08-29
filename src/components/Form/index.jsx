@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "../Button";
 import Dropdown from "../Dropdown";
 import Input from "../Input";
-import "./Form.css";
+import "./styles.css";
 
 const Form = (props) => {
 

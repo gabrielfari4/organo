@@ -1,4 +1,4 @@
-import './Dropdown.css'
+import './styles.css'
 
 const Dropdown = (props) => {
     return (
