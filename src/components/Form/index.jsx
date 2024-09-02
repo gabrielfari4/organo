@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../Button";
 import Dropdown from "../Dropdown";
 import Input from "../Input";
 import "./styles.css";
+import { v4 as uuidv4 } from 'uuid';
 
 const Form = (props) => {
 
@@ -10,6 +11,10 @@ const Form = (props) => {
     const [role, setRole] = useState('');
     const [image, setImage] = useState('');
     const [team, setTeam] = useState('');
+    const [id, setId] = useState('')
+    const [teamName, setTeamName] = useState('');
+    const [teamColor, setTeamColor] = useState('')
+   
 
     const onSave = (e) => {
         e.preventDefault()
@@ -17,13 +22,18 @@ const Form = (props) => {
           name,
           role,
           image,
-          team
+          team,
+          id
         })
         setName('')
         setRole('')
         setImage('')
         setTeam('')
     }
+
+    useEffect(() => {
+      setId(uuidv4())
+    }, [name])
 
   return (
     <section className="form">
@@ -50,8 +60,32 @@ const Form = (props) => {
           value={team}
           onChanged={value => setTeam(value)}
         />
-        <Button>
+        <Button >
             Criar card
+        </Button>
+      </form>
+      <form onSubmit={(e) => {
+        e.preventDefault()
+        props.submitTeam({ name: teamName, primaryColor: teamColor })
+      }
+      }>
+        <h2>Preencha os dados para criar um novo time.</h2>
+        <Input 
+          mandatory 
+          label="Nome" 
+          placeholder="Digite o nome do time" 
+          value={teamName}
+          onChanged={value => setTeamName(value)}
+        />
+        <Input 
+          mandatory={true} 
+          label="Cor" 
+          placeholder="Digite a cor do time" 
+          value={teamColor}
+          onChanged={value => setTeamColor(value)}
+        />
+        <Button >
+            Criar novo time
         </Button>
       </form>
     </section>

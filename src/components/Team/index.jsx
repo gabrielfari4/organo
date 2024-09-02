@@ -6,7 +6,7 @@ const Team = (props) => {
     return (
         props.employees.length > 0 && <section className='team' style={{ backgroundImage: 'url(../../../public/images/fundo.png)', backgroundColor: hexToRgba(props.primaryColor, '0.6') }}>
             <input value={props.primaryColor} type='color' className='input-color' onChange={event => {
-              props.changeColor(event.target.value, props.name)
+              props.changeColor(event.target.value, props.id)
             }} /> 
             <h3 style={{borderColor: props.primaryColor}}>{props.name}</h3>
             <div className='employees'>
@@ -15,6 +15,7 @@ const Team = (props) => {
                         key={employee.name}
                         name={employee.name} 
                         role={employee.role}
+                        id={employee.id}
                         image={employee.image}
                         primaryColor={props.primaryColor}
                         onDeleting={props.onDeleting}
