@@ -1,15 +1,20 @@
 import './styles.css'
 
-const Input = (props) => {
+const Input = ({ type = 'text', label, value, onChanged, mandatory, placeholder }) => {
 
     const onType = (e) => {
-        props.onChanged(e.target.value)
+        onChanged(e.target.value)
     }
 
     return (
-        <div className="input">
-            <label>{props.label}</label>
-            <input value={props.value} onChange={onType} required={props.mandatory} type="text" placeholder={props.placeholder}/>
+        <div className={`input input-${type}`}>
+            <label>{label}</label>
+            <input 
+            value={value} 
+            onChange={onType} 
+            required={mandatory} 
+            type={type} 
+            placeholder={placeholder}/>
         </div>
     )
 }

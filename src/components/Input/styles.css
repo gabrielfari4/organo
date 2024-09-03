@@ -16,3 +16,9 @@
         border-radius: 6px;
     }
 }
+
+.input-color input {
+    height: 40px;
+    padding: 5px 24px;
+    width: 50%;
+}

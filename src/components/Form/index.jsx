@@ -79,6 +79,7 @@ const Form = (props) => {
         />
         <Input 
           mandatory={true} 
+          type="color"
           label="Cor" 
           placeholder="Digite a cor do time" 
           value={teamColor}
