@@ -69,6 +69,13 @@ function App() {
     setTeams([ ...teams, { ...newTeam, id: uuidv4() } ])
   }
 
+  const resolveFavorite = (id) => {
+    setEmployees(employees.map(employee => {
+      if (employee.id === id) employee.favorite = !employee.favorite
+      return employee
+    }))
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -88,6 +95,7 @@ function App() {
             key={team.name}
             employees={employees.filter(employee => employee.team === team.name)}
             onDeleting={deleteEmployee}
+            onFavorite={resolveFavorite}
           />
         ) 
       })}

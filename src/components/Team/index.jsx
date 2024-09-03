@@ -11,7 +11,7 @@ const Team = (props) => {
             <h3 style={{borderColor: props.primaryColor}}>{props.name}</h3>
             <div className='employees'>
                 {props.employees.map(employee => {
-                    return <Employee 
+                    return (<Employee 
                         key={employee.name}
                         name={employee.name} 
                         role={employee.role}
@@ -19,7 +19,9 @@ const Team = (props) => {
                         image={employee.image}
                         primaryColor={props.primaryColor}
                         onDeleting={props.onDeleting}
-                        />
+                        onFavorite={props.onFavorite}
+                        favorite={employee.favorite}
+                        />)
                 })}
             </div>
         </section>

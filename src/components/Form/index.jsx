@@ -5,6 +5,7 @@ import Input from "../Input";
 import "./styles.css";
 import { v4 as uuidv4 } from 'uuid';
 
+
 const Form = (props) => {
 
     const [name, setName] = useState('');
@@ -14,6 +15,7 @@ const Form = (props) => {
     const [id, setId] = useState('')
     const [teamName, setTeamName] = useState('');
     const [teamColor, setTeamColor] = useState('')
+    const [favorite, setFavorite] = useState('')
    
 
     const onSave = (e) => {
@@ -23,7 +25,8 @@ const Form = (props) => {
           role,
           image,
           team,
-          id
+          id,
+          favorite
         })
         setName('')
         setRole('')
@@ -33,6 +36,7 @@ const Form = (props) => {
 
     useEffect(() => {
       setId(uuidv4())
+      setFavorite(false)
     }, [name])
 
   return (
