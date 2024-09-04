@@ -1,13 +1,20 @@
 .colaborador {
     width: 280px;
     position: relative;
+    margin-bottom: 10px;
     img {
         width: 100px;
         border-radius: 50%;
         position: relative;
         bottom: -50px;
     }
+    .iconUser {
+        border-radius: 50%;
+        position: relative;
+        bottom: -50px;
+    }
     .cabecalho {
+        height: 104px;
         border-radius: 10px 10px 0px 0px;
     }
     .rodape {
